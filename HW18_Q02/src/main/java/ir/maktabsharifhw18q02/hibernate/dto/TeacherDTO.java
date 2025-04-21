@@ -28,7 +28,7 @@ public class TeacherDTO {
     @NotBlank(message = "Degree should be entered")
     private String degree;
 
-    @NotBlank(message = "Level of education should be entered")
+    @NotNull(message = "Level of education should be entered")
     private LevelOfEducation levelOfEducation;
 
     @Positive

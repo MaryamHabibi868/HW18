@@ -17,9 +17,7 @@ public class TeacherRepositoryImp implements
 
     @Override
     public Teacher save(Teacher teacher) {
-        entityManager.getTransaction().begin();
         entityManager.persist(teacher);
-        entityManager.getTransaction().commit();
         return teacher;
     }
 
