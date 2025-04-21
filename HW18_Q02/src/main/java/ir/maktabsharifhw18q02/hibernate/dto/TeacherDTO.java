@@ -3,9 +3,13 @@ package ir.maktabsharifhw18q02.hibernate.dto;
 import ir.maktabsharifhw18q02.hibernate.entity.LevelOfEducation;
 
 import jakarta.validation.constraints.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDate;
 
+@Getter
+@Setter
 public class TeacherDTO {
 
     @NotBlank(message = "First name should be entered")
