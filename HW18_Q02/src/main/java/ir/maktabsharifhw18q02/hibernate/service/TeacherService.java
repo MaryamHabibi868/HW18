@@ -10,6 +10,7 @@ import jakarta.validation.Validation;
 import jakarta.validation.ValidationException;
 import jakarta.validation.Validator;
 
+import java.util.List;
 import java.util.Set;
 
 public class TeacherService {
@@ -47,5 +48,37 @@ public class TeacherService {
         teacherRepositoryImp.save(teacher);
         entityManager.getTransaction().commit();
         System.out.println("Teacher added successfully");
+    }
+
+
+    public Teacher update(Teacher teacher) {
+        entityManager.getTransaction().begin();
+        teacherRepositoryImp.update(teacher);
+        entityManager.getTransaction().commit();
+        System.out.println("Teacher updated successfully");
+        return teacher;
+    }
+
+
+    public void delete(Teacher teacher) {
+        entityManager.getTransaction().begin();
+        teacherRepositoryImp.delete(teacher);
+        entityManager.getTransaction().commit();
+        System.out.println("Teacher deleted successfully");
+    }
+
+
+    public List<Teacher> loadAll() {
+        return teacherRepositoryImp.loadAll();
+    }
+
+
+    public boolean contains(Teacher teacher) {
+        return teacherRepositoryImp.contains(teacher);
+    }
+
+
+    public Teacher findById(Integer id) {
+        return teacherRepositoryImp.findById(id);
     }
 }

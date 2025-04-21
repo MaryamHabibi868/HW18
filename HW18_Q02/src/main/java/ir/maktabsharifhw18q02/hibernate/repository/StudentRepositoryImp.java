@@ -16,25 +16,19 @@ public class StudentRepositoryImp implements PersonRepository<Student> {
 
     @Override
     public Student save(Student student) {
-        entityManager.getTransaction().begin();
         entityManager.persist(student);
-        entityManager.getTransaction().commit();
         return student;
     }
 
     @Override
     public Student update(Student student) {
-        entityManager.getTransaction().begin();
         entityManager.merge(student);
-        entityManager.getTransaction().commit();
         return student;
     }
 
     @Override
     public void delete(Student student) {
-        entityManager.getTransaction().begin();
         entityManager.remove(student);
-        entityManager.getTransaction().commit();
     }
 
     @Override

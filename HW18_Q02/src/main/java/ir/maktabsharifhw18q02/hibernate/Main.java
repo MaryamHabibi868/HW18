@@ -31,5 +31,8 @@ public class Main {
         student.setYearOfEntry(2020);
 
         studentService.signUp(student);
+
+        // update Student
+        studentService.
     }
 }

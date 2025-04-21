@@ -25,17 +25,13 @@ public class TeacherRepositoryImp implements
 
     @Override
     public Teacher update(Teacher teacher) {
-        entityManager.getTransaction().begin();
         entityManager.merge(teacher);
-        entityManager.getTransaction().commit();
         return teacher;
     }
 
     @Override
     public void delete(Teacher teacher) {
-        entityManager.getTransaction().begin();
         entityManager.remove(teacher);
-        entityManager.getTransaction().commit();
     }
 
     @Override

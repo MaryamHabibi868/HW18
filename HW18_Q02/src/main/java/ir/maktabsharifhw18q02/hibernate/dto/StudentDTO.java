@@ -27,6 +27,7 @@ public class StudentDTO {
     @NotBlank (message = "Major should be entered")
     private String major;
 
-    @Pattern(regexp = "\\d{4}" , message = "Year of entry should have 4 number")
+    @Min(1990)
+    @Max(2025)
     private Integer yearOfEntry;
 }
