@@ -18,7 +18,7 @@ public class TeacherDTO {
     @NotBlank(message = "Last name should be entered")
     private String lastName;
 
-    @NotBlank(message = "Birth date should be entered")
+    @NotNull(message = "Birth date should be entered")
     @Past(message = "Date of birthday should be in the past")
     private LocalDate birthday;
 

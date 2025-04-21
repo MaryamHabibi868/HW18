@@ -1,9 +1,7 @@
 package ir.maktabsharifhw18q02.hibernate.dto;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Past;
-import jakarta.validation.constraints.Pattern;
-import jakarta.validation.constraints.Size;
+import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.validation.constraints.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,7 +17,7 @@ public class StudentDTO {
     @NotBlank (message = "Last name should be entered")
     private String lastName;
 
-    @NotBlank (message = "Birth date should be entered")
+    @NotNull(message = "Birth date should be entered")
     @Past (message = "Date of birthday should be in the past")
     private LocalDate birthday;
 
