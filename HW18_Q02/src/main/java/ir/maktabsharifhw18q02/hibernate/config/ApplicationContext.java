@@ -1,5 +1,7 @@
 package ir.maktabsharifhw18q02.hibernate.config;
 
+import ir.maktabsharifhw18q02.hibernate.repository.StudentRepositoryImp;
+import ir.maktabsharifhw18q02.hibernate.repository.TeacherRepositoryImp;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
@@ -36,6 +38,23 @@ public class ApplicationContext {
             entityManager = getEntityManagerFactory().createEntityManager();
         }
         return entityManager;
+    }
+
+    private StudentRepositoryImp studentRepository;
+    public StudentRepositoryImp getStudentRepository() {
+        if(studentRepository == null){
+            studentRepository = new StudentRepositoryImp();
+        }
+        return studentRepository;
+    }
+
+    private TeacherRepositoryImp teacherRepository;
+
+    public TeacherRepositoryImp getTeacherRepository() {
+        if(teacherRepository == null){
+            teacherRepository = new TeacherRepositoryImp();
+        }
+        return teacherRepository;
     }
 
 }
